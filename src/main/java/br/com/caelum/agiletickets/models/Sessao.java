@@ -86,7 +86,7 @@ public class Sessao {
 		this.ingressosReservados = ingressosReservados;
 	}
 
-	public Integer getIngressosDisponiveis() {
+	public Integer getNumeroDeIngressosDisponiveis() {
 		// faz a conta de total de ingressos menos ingressos reservados
 		return totalIngressos - ingressosReservados;
 	}
@@ -98,7 +98,7 @@ public class Sessao {
     public boolean pertoDoLimiteDeSeguranca_NaoUtilizada()
     {
             int limite = 3;
-            return getIngressosDisponiveis() > limite;
+            return getNumeroDeIngressosDisponiveis() > limite;
     }
 
 	public void reserva(Integer numeroDeIngressos) {
@@ -107,7 +107,7 @@ public class Sessao {
 	}
 
 	public boolean podeReservar(Integer numeroDeIngressos) {
-		int sobraram = getIngressosDisponiveis() - numeroDeIngressos;
+		int sobraram = getNumeroDeIngressosDisponiveis() - numeroDeIngressos;
         boolean naoTemEspaco = sobraram <= 0;
 
         return !naoTemEspaco;

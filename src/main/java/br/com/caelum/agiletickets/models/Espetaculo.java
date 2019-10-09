@@ -108,8 +108,8 @@ public class Espetaculo {
 
        for (Sessao s : sessoes)
        {
-           if (s.getIngressosDisponiveis() < min) return false;
-           totDisp += s.getIngressosDisponiveis();
+           if (s.getNumeroDeIngressosDisponiveis() < min) return false;
+           totDisp += s.getNumeroDeIngressosDisponiveis();
        }
 
        if (totDisp >= qtd) return true;
@@ -123,7 +123,7 @@ public class Espetaculo {
 
        for (Sessao s : sessoes)
        {
-           totDisp += s.getIngressosDisponiveis();
+           totDisp += s.getNumeroDeIngressosDisponiveis();
        }
 
        if (totDisp >= qtd) return true;
